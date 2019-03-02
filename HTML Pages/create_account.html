@@ -34,12 +34,14 @@
 
   </nav>
 
+
   <br/>
   <div class="container">
     <h1 class="header center">Create an Account</h1>
     <br/>
     <div class="row">
     <form class="col s12">
+      <h6 class="grey-text">Personal Info:</h6>
       <div class="row">
         <div class="input-field col s6">
           <input id="first_name" type="text" class="validate">
@@ -50,18 +52,44 @@
           <label for="last_name">Last Name</label>
         </div>
       </div>
+      <h6 class="grey-text">Birthdate:</h6>
       <div class="row">
-        <div class="input-field col s6">
-          <input id="birthdate" type="text" class="date-picker">
-          <label for="birthdate">Birthdate</label>
+        <div class="input-field col s3">
+            <input id="birthdate-month" type="number" class="validate">
+            <label for="birthdate-month">Month</label>
+        </div>
+        <div class="input-field col s3">
+            <input id="birthdate-day" type="number" class="validate">
+            <label for="birthdate-day">Day</label>
         </div>
         <div class="input-field col s6">
-          <div class="input-field col s6">
-            <input id="gender" type="text" class="validate">
-            <label for="gender">Gender</label>
-          </div>
+            <input id="birthdate-year" type="number" class="validate">
+            <label for="birthdate-year">Year</label>
         </div>
       </div>
+      <h6 class="grey-text">Gender:</h6>
+      <div class="row">
+        <div class="input-field col s4">
+          <label>
+            <input id="female" name="gender" type="radio"/>
+            <span>Female</span>
+          </label>
+        </div>
+        <div class="input-field col s4">
+          <label>
+            <input id="male" name="gender" type="radio"/>
+            <span>Male</span>
+          </label>
+        </div>
+        <div class="input-field col s4">
+          <label for="other">
+            <input id="other" name="gender" type="radio"/>
+            <span>Other</span>
+          </label>
+        </div>
+      </div>
+      <br>
+      <h6 class="grey-text">Account Info:</h6>
       <div class="row">
         <div class="input-field col s12">
           <input id="email" type="email" class="validate">
@@ -86,8 +114,6 @@
     <a href="#" class="waves-effect waves-light btn-large deep-purple darken-1">Create My Account</a>
   </div>
   </div>
-
-
 
   <!--JavaScript at end of body for optimized loading-->
     <script type="text/javascript" src="js/materialize.min.js"></script>
