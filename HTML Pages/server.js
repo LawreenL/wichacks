@@ -5,6 +5,12 @@ var express = require("express");
 var app = express();
 var path = require('path');
 var bp = require('body-parser');
+const language = require('@google-cloud/language');
+const client = new language.LanguageServiceClient();
+var writing;
+var sentiment;
+var magnitude;
+
 
 
 
@@ -20,9 +26,14 @@ var bp = require('body-parser');
       res.sendStatus(200);
     });
 
-    app.route("/login").post(function (req, res) {
-        console.log("We're in login!");
-        console.log(req.body);
+    a11pp.route("/analyze").post(function (req, res) {
+        console.log("Analyzing sentiment");
+        writing = (req.body);
+        console.log(writing);
+        const document = {
+          content: writing,
+          type: 'PLAIN_TEXT',
+        };
         res.sendStatus(200);
       });
 

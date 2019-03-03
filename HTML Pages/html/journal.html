@@ -38,19 +38,19 @@
   <div class="container">
     <h2 class="header center">How are you feeling?</h2>
     <div class="row">
-      <form class="col s12">
-        <form action="#" method="post">
+      <form action="/analyze" method="post">
         <div class="row">
           <div class="input-field col s12">
-            <textarea id="textarea1" class="materialize-textarea"></textarea>
+            <textarea id="textarea1" name="journal" type="PLAIN_TEXT" class="materialize-textarea"></textarea>
             <label for="textarea1">Write how you feel:</label>
           </div>
         </div>
+        <div class="row center">
+          <input type="submit" class="waves-effect waves-light btn-large text-white deep-purple lighten-3">
+        </div>
       </form>
     </div>
-    <div class="row center">
-      <input type="submit" class="waves-effect waves-light btn-large text-white deep-purple lighten-3">
-    </div>
+
   </div>
 
   <!--JavaScript at end of body for optimized loading-->
