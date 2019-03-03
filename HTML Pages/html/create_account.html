@@ -56,15 +56,15 @@
       <h6 class="grey-text">Birthdate:</h6>
       <div class="row">
         <div class="input-field col s3">
-            <input id="birthdate-month" type="number" class="validate">
+            <input id="birthdate-month" type="number" class="validate" min="1" max="12">
             <label for="birthdate-month">Month</label>
         </div>
         <div class="input-field col s3">
-            <input id="birthdate-day" type="number" class="validate">
+            <input id="birthdate-day" type="number" class="validate" min="1" max="31">
             <label for="birthdate-day">Day</label>
         </div>
         <div class="input-field col s6">
-            <input id="birthdate-year" type="number" class="validate">
+            <input id="birthdate-year" type="number" class="validate" min="1900">
             <label for="birthdate-year">Year</label>
         </div>
       </div>
