@@ -20,6 +20,12 @@ var bp = require('body-parser');
       res.sendStatus(200);
     });
 
+    app.route("/login").post(function (req, res) {
+        console.log("We're in login!");
+        console.log(req.body);
+        res.sendStatus(200);
+      });
+
   app.listen(8080);
 
 /*http.createServer(function (req, res) {
