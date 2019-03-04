@@ -5,13 +5,31 @@ var express = require("express");
 var app = express();
 var path = require('path');
 var bp = require('body-parser');
-const language = require('@google-cloud/language');
-const client = new language.LanguageServiceClient();
 var writing;
 var sentiment;
 var magnitude;
 
+function analyzeJournal(feelings){
+  // Imports the Google Cloud client library
+  const language = require('@google-cloud/language');
+  // Creates a client
+  const client = new language.LanguageServiceClient();
 
+  const document = {
+    content: feelings,
+    type: 'PLAIN_TEXT',
+  };
+
+  const [result] = client.analyzeSentiment({document});
+
+  const sentiment = result.documentSentiment;
+  console.log(`Document sentiment:`);
+  console.log(`  Score: ${sentiment.score}`);
+  console.log(`  Magnitude: ${sentiment.magnitude}`);
+
+
+  return
+}
 
 
 
@@ -26,14 +44,12 @@ var magnitude;
       res.sendStatus(200);
     });
 
-    a11pp.route("/analyze").post(function (req, res) {
+    app.route("/analyze").post(function (req, res) {
         console.log("Analyzing sentiment");
         writing = (req.body);
         console.log(writing);
-        const document = {
-          content: writing,
-          type: 'PLAIN_TEXT',
-        };
+        //analyzeJournal(writing);
+
         res.sendStatus(200);
       });
 
